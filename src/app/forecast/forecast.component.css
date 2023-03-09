@@ -3,14 +3,34 @@
   justify-content: center;
   padding-top: 20px;
   background-color: #fcfcfc;
-  height: 350px;
-  width: 300px;
+  height: 400px;
+  width: 350px;
   border-radius: 15px;
+}
+
+.search-container{
+  position: relative;
 }
 
 .search-container input{
   font-family: 'Montserrat', Helvetica, sans-serif;
-  height: 30px;
+  font-size: 15px;
+  height: 35px;
+  width: 280px;
   border-radius: 15px;
+  border: #1b1b1b solid 1.5px;
   padding: 5px;
+}
+
+.search-container button{
+  position: absolute;
+  border-radius: 100px;
+  border: transparent 1.5px solid;
+  padding: 7px 9px 7px 9px;
+  background-color: transparent;
+  transform: translateX(-34px);
+  transition: background-color .2s ease-in-out;
+}
+.search-container button:hover{
+  background-color: #1d28357a;
 }
