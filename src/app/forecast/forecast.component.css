@@ -4,12 +4,20 @@
   padding-top: 20px;
   background-color: #fcfcfc;
   height: 400px;
-  width: 350px;
+  width: 370px;
   border-radius: 15px;
 }
 
 .search-container{
   position: relative;
+}
+
+.location-icon{
+  pointer-events: none;
+  height: 30px;
+  width: auto;
+  position: absolute;
+  transform: translate(-33px, 4px);
 }
 
 .search-container input{
@@ -18,8 +26,14 @@
   height: 35px;
   width: 280px;
   border-radius: 15px;
-  border: #1b1b1b solid 1.5px;
+  border: transparent solid 1.5px;
+  background-color: #fcfcfc;
   padding: 5px;
+  text-align: center;
+}
+
+.search-container input:focus::placeholder{
+  opacity: .3;
 }
 
 .search-container button{
