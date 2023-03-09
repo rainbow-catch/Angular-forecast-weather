@@ -9,6 +9,7 @@
 }
 
 .search-container input{
+  font-family: 'Montserrat', Helvetica, sans-serif;
   height: 30px;
   border-radius: 15px;
   padding: 5px;
