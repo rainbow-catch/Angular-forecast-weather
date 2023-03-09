@@ -1,8 +1,8 @@
 <div class="maindiv">
   <div class="search-container">
     <img class="location-icon" src="assets/icons/navigation.png">
-    <form>
-      <input placeholder="Enter location">
+    <form (submit)="handleSearch($event)">
+      <input [value]="searchValue" (input)="handleChange($event)" placeholder="Enter location">
       <button type="submit">🔎</button>
     </form>
   </div>
