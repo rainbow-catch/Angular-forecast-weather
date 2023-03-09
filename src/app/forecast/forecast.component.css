@@ -1,0 +1,15 @@
+.maindiv{
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  background-color: #fcfcfc;
+  height: 350px;
+  width: 300px;
+  border-radius: 15px;
+}
+
+.search-container input{
+  height: 30px;
+  border-radius: 15px;
+  padding: 5px;
+}
