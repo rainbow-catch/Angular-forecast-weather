@@ -31,9 +31,16 @@ export class ForecastComponent implements OnInit {
     }
   }
 
-  handleSearch(e: Event) {
+  async handleSearch(e: Event) {
     e.preventDefault();
-    console.log(this.searchValue);
-    this.openMainDiv();
+    let response;
+    if (this.searchValue !== null && this.searchValue !== '') {
+      response = await this.forecastSerice.getForecast(this.searchValue);
+      if (response === 'error') {
+        return; //TODO: Show error on page
+      }
+      console.log(response);
+      this.openMainDiv();
+    }
   }
 }
