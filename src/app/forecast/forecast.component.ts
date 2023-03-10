@@ -3,25 +3,36 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-forecast',
   templateUrl: './forecast.component.html',
-  styleUrls: ['./forecast.component.css']
+  styleUrls: ['./forecast.component.css'],
 })
 export class ForecastComponent implements OnInit {
-
   searchValue: string = '';
+  mainDivClassList = 'closed';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   handleChange(e: any) {
     this.searchValue = e.target.value;
   }
 
-  handleSearch(e:Event) {
-    e.preventDefault();
-    console.log(this.searchValue);
-    
+  openMainDiv() {
+    this.mainDivClassList = '';
+  }
+  closeMainDiv() {
+    this.mainDivClassList = 'closed';
   }
 
+  closeMainDivEvent(e: KeyboardEvent) {
+    if (e.key === 'Escape') {
+      this.closeMainDiv();
+    }
+  }
+
+  handleSearch(e: Event) {
+    e.preventDefault();
+    console.log(this.searchValue);
+    this.openMainDiv();
+  }
 }

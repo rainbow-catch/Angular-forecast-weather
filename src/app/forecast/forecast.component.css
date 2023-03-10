@@ -8,6 +8,10 @@
   border-radius: 15px;
 }
 
+.closed{
+  height: 80px;
+}
+
 .search-container{
   position: relative;
 }

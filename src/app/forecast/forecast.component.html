@@ -1,8 +1,8 @@
-<div class="maindiv">
+<div [ngClass]=mainDivClassList class="maindiv">
   <div class="search-container">
     <img class="location-icon" src="assets/icons/navigation.png">
     <form (submit)="handleSearch($event)">
-      <input [value]="searchValue" (input)="handleChange($event)" placeholder="Enter location">
+      <input (keydown)="closeMainDivEvent($event)" [value]="searchValue" (input)="handleChange($event)" placeholder="Enter location">
       <button type="submit">🔎</button>
     </form>
   </div>
