@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ForecastService } from '../forecast.service';
 
 @Component({
   selector: 'app-forecast',
@@ -9,7 +10,7 @@ export class ForecastComponent implements OnInit {
   searchValue: string = '';
   mainDivClassList = 'closed';
 
-  constructor() {}
+  constructor(private forecastSerice: ForecastService) {}
 
   ngOnInit(): void {}
 
