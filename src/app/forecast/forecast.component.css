@@ -68,8 +68,15 @@
   color: #e91e1eb3;
 }
 
+.clock-container{
+  position: absolute;
+  margin-top: -50px;
+  margin-left: -60px;
+  color: #fcfcfc;
+}
+
 .weather-info{
-  margin-top: 100px;
+  margin-top: 50px;
 }
 .location-info{
   display: flex;

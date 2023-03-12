@@ -28,6 +28,10 @@ export class ForecastComponent implements OnInit {
     this.mainDivClassList = 'closed';
   }
 
+  formatDate() {
+    return this.forecastData?.location.localtime.substring(0, this.forecastData.location.localtime.length - 5)
+  }
+
   closeMainDivEvent(e: KeyboardEvent) {
     if (e.key === 'Escape') {
       this.closeMainDiv();
