@@ -96,6 +96,10 @@
 .weather-icon {
   user-select: none;
   pointer-events: none;
-  height: 150px;
+  height: auto;
   width: auto;
+}
+
+.weather-info-container{
+  text-align: center;
 }

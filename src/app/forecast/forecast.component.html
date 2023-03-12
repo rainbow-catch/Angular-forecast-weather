@@ -18,6 +18,12 @@
     <div *ngIf="forecastData" class="weather-icon-container">
       <img class="weather-icon" [src]="forecastIcon">
     </div>
+    <div class="weather-info-container" *ngIf="forecastData">
+      <h3>{{forecastData.current.condition.text}}</h3>
+      <h2>{{forecastData.current.temp_c}}°C</h2>
+      <h4>{{forecastData.current.pressure_mb}} hPa</h4>
+      <h5>Feelslike {{forecastData.current.feelslike_c}}°C</h5>
+    </div>
   </div>
 </div>
 <div [ngClass]=errorContainerClassList class="error-container">
