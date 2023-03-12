@@ -34,6 +34,7 @@ export class ForecastComponent implements OnInit {
 
   closeMainDivEvent(e: KeyboardEvent) {
     if (e.key === 'Escape') {
+      this.forecastData = undefined;
       this.closeMainDiv();
     }
   }
