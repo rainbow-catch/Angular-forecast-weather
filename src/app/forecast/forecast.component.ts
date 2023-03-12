@@ -61,14 +61,8 @@ export class ForecastComponent implements OnInit {
       }
       this.forecastData = response;
       let condition = this.forecastData?.current.condition;
-      let isDay = this.forecastData?.current.is_day;
-      if (condition !== undefined && isDay !== undefined) {
-        this.forecastIcon = 'assets/weather-icons/';
-        this.forecastIcon += this.forecastSerice.returnWeatherIcon(
-          condition,
-          isDay
-        );
-        this.forecastIcon += '.png';
+      if (condition !== undefined) {
+        this.forecastIcon = this.forecastSerice.returnWeatherIcon(condition);
       }
       console.log(this.forecastData);
       console.log(this.forecastIcon);

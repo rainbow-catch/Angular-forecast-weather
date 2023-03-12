@@ -35,27 +35,7 @@ export class ForecastService {
     return res;
   }
 
-  returnWeatherIcon(condition: conditionType, isDay: number) {
-    if (condition.code === 1000) {
-      if (isDay === 1) {
-        return 'sun';
-      } else {
-        return 'moon-with-stars';
-      }
-    }
-    if (condition.code === 1003) {
-      if (isDay === 1) {
-        return 'cloudy-with-sun';
-      } else {
-        return 'moon-with-stars';
-      }
-    }
-    if (condition.code === 1009 || condition.code === 1006) {
-      return 'cloudy';
-    }
-    if (condition.code === 1063 ) {
-      return 'cloud-little-rain'
-    }
-    return 'default';
+  returnWeatherIcon(condition: conditionType) {
+    return condition.icon.replace('64x64', '128x128');
   }
 }

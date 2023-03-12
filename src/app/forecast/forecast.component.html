@@ -11,11 +11,11 @@
     </form>
   </div>
   <div class="weather-info">
-    <div class="location-info">
-      <h3>{{forecastData?.location?.name}}</h3>
-      <h3>, {{forecastData?.location?.country}}</h3>
+    <div *ngIf="forecastData" class="location-info">
+      <h3>{{forecastData.location.name}}</h3>
+      <h3>, {{forecastData.location.country}}</h3>
     </div>
-    <div class="weather-icon-container">
+    <div *ngIf="forecastData" class="weather-icon-container">
       <img class="weather-icon" [src]="forecastIcon">
     </div>
   </div>
