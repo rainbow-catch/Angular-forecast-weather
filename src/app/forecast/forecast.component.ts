@@ -12,6 +12,7 @@ export class ForecastComponent implements OnInit {
   mainDivClassList = 'closed';
   errorContainerClassList = 'invisible';
   forecastData: forecastType | undefined = undefined;
+  forecastIcon: string | undefined;
 
   constructor(private forecastSerice: ForecastService) {}
 
@@ -29,7 +30,10 @@ export class ForecastComponent implements OnInit {
   }
 
   formatDate() {
-    return this.forecastData?.location.localtime.substring(0, this.forecastData.location.localtime.length - 5)
+    return this.forecastData?.location.localtime.substring(
+      0,
+      this.forecastData.location.localtime.length - 5
+    );
   }
 
   closeMainDivEvent(e: KeyboardEvent) {
@@ -56,7 +60,17 @@ export class ForecastComponent implements OnInit {
         return;
       }
       this.forecastData = response;
+      if (this.forecastData?.current.condition != undefined) {
+        this.forecastIcon = 'assets/weather-icons/';
+        this.forecastIcon += this.forecastSerice.returnWeatherIcon(
+          this.forecastData?.current.condition,
+          this.forecastData?.current.is_day
+        );
+        this.forecastIcon += '.png';
+      }
       console.log(this.forecastData);
+      console.log(this.forecastIcon);
+
       this.openMainDiv();
     }
   }

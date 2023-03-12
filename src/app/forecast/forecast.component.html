@@ -15,6 +15,9 @@
       <h3>{{forecastData?.location?.name}}</h3>
       <h3>, {{forecastData?.location?.country}}</h3>
     </div>
+    <div class="weather-icon-container">
+      <img class="weather-icon" [src]="forecastIcon">
+    </div>
   </div>
 </div>
 <div [ngClass]=errorContainerClassList class="error-container">

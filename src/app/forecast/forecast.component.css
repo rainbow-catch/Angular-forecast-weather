@@ -1,21 +1,21 @@
-.maindiv{
+.maindiv {
   padding-top: 20px;
-  background-color: #fcfcfc;
+  background-color: #fff;
   height: 400px;
   width: 370px;
   border-radius: 15px;
 }
 
-.closed{
+.closed {
   height: 80px;
 }
 
-.search-container{
+.search-container {
   transform: translateX(50px);
   position: relative;
 }
 
-.location-icon{
+.location-icon {
   pointer-events: none;
   height: 30px;
   width: auto;
@@ -23,23 +23,23 @@
   transform: translate(-33px, 4px);
 }
 
-.search-container input{
+.search-container input {
   font-family: 'Montserrat', Helvetica, sans-serif;
   font-size: 15px;
   height: 35px;
   width: 280px;
   border-radius: 15px;
   border: transparent solid 1.5px;
-  background-color: #fcfcfc;
+  background-color: #fff;
   padding: 5px;
   text-align: center;
 }
 
-.search-container input:focus::placeholder{
+.search-container input:focus::placeholder {
   opacity: .3;
 }
 
-.search-container button{
+.search-container button {
   position: absolute;
   border-radius: 100px;
   border: transparent 1.5px solid;
@@ -48,37 +48,54 @@
   transform: translateX(-34px);
   transition: background-color .2s ease-in-out;
 }
-.search-container button:hover{
+
+.search-container button:hover {
   background-color: #1d28357a;
 }
 
-.error-container{
+.error-container {
   display: flex;
   justify-content: center;
   position: relative;
   transition: all .4s ease-in-out;
   pointer-events: none;
 }
-.invisible{
+
+.invisible {
   opacity: 0;
 }
-.error-container h4{
+
+.error-container h4 {
   position: absolute;
   padding-top: 40px;
   color: #e91e1eb3;
 }
 
-.clock-container{
+.clock-container {
   position: absolute;
   margin-top: -50px;
   margin-left: -60px;
   color: #fcfcfc;
 }
 
-.weather-info{
+.weather-info {
   margin-top: 50px;
 }
-.location-info{
+
+.location-info {
   display: flex;
   justify-content: center;
+}
+
+.weather-icon-container{
+  padding-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.weather-icon {
+  user-select: none;
+  pointer-events: none;
+  height: 150px;
+  width: auto;
 }

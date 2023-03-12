@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
+import { conditionType } from 'src/types/conditionType';
 
 @Injectable({
   providedIn: 'root',
@@ -32,5 +33,17 @@ export class ForecastService {
         return 'error';
       });
     return res;
+  }
+
+  returnWeatherIcon(condition:conditionType, isDay: number) {
+    if (condition.code===1000) {
+      if (isDay===1) {
+        return 'sun';
+      }
+      else {
+        return 'moon-with-stars'
+      }
+    }
+    return 'default';
   }
 }

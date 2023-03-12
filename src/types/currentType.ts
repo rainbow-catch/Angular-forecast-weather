@@ -1,10 +1,8 @@
+import { conditionType } from './conditionType';
+
 export interface currentType {
   cloud: number;
-  condition: {
-    text: string;
-    icon: string;
-    code: number;
-  };
+  condition: conditionType;
   feelslike_c: number;
   feelslike_f: number;
   gust_kph: number;
