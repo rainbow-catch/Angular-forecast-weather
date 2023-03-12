@@ -26,7 +26,7 @@ export class ForecastService {
     const res = axios
       .get(apiKey, { responseEncoding: 'utf8' })
       .then((res) => {
-        return res.data.current;
+        return res.data;
       })
       .catch(() => {
         return 'error';

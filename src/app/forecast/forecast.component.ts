@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { forecastType } from 'src/types/forecastType';
 import { ForecastService } from '../forecast.service';
 
 @Component({
@@ -9,7 +10,8 @@ import { ForecastService } from '../forecast.service';
 export class ForecastComponent implements OnInit {
   searchValue: string = '';
   mainDivClassList = 'closed';
-  errorContainerClassList = 'invisible'
+  errorContainerClassList = 'invisible';
+  forecastData: forecastType | undefined = undefined;
 
   constructor(private forecastSerice: ForecastService) {}
 
@@ -35,7 +37,7 @@ export class ForecastComponent implements OnInit {
   showErrorText() {
     this.errorContainerClassList = '';
     setTimeout(() => {
-      this.errorContainerClassList = 'invisible'
+      this.errorContainerClassList = 'invisible';
     }, 2500);
   }
 
@@ -48,7 +50,8 @@ export class ForecastComponent implements OnInit {
         this.showErrorText();
         return;
       }
-      console.log(response);
+      this.forecastData = response;
+      console.log(this.forecastData);
       this.openMainDiv();
     }
   }

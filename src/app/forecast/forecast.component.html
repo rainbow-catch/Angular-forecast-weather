@@ -2,9 +2,16 @@
   <div class="search-container">
     <img class="location-icon" src="assets/icons/navigation.png">
     <form (submit)="handleSearch($event)">
-      <input (keydown)="closeMainDivEvent($event)" [value]="searchValue" (input)="handleChange($event)" placeholder="Enter location">
+      <input (keydown)="closeMainDivEvent($event)" [value]="searchValue" (input)="handleChange($event)"
+        placeholder="Enter location">
       <button type="submit">🔎</button>
     </form>
+  </div>
+  <div class="weather-info">
+    <div class="location-info">
+      <h3>{{forecastData?.location?.name}}</h3>
+      <h3>, {{forecastData?.location?.country}}</h3>
+    </div>
   </div>
 </div>
 <div [ngClass]=errorContainerClassList class="error-container">

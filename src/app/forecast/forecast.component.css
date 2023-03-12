@@ -1,6 +1,4 @@
 .maindiv{
-  display: flex;
-  justify-content: center;
   padding-top: 20px;
   background-color: #fcfcfc;
   height: 400px;
@@ -13,6 +11,7 @@
 }
 
 .search-container{
+  transform: translateX(50px);
   position: relative;
 }
 
@@ -67,4 +66,12 @@
   position: absolute;
   padding-top: 40px;
   color: #e91e1eb3;
+}
+
+.weather-info{
+  margin-top: 100px;
+}
+.location-info{
+  display: flex;
+  justify-content: center;
 }
