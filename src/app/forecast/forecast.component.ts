@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { forecastType } from 'src/types/forecastType';
+import { weatherType } from 'src/types/weatherType';
 import { ForecastService } from '../forecast.service';
 
 @Component({
@@ -11,7 +11,8 @@ export class ForecastComponent implements OnInit {
   searchValue: string = '';
   mainDivClassList = 'closed';
   errorContainerClassList = 'invisible';
-  currentWeatherData: forecastType | undefined = undefined;
+  currentWeatherData: weatherType | undefined = undefined;
+  oneDayForecastData: weatherType | undefined = undefined;
   forecastIcon: string | undefined;
 
   constructor(private forecastSerice: ForecastService) {}
@@ -52,14 +53,19 @@ export class ForecastComponent implements OnInit {
 
   async handleSearch(e: Event) {
     e.preventDefault();
-    let response;
+    let currentResponse;
+    let oneDayForecastResponse;
     if (this.searchValue !== null && this.searchValue !== '') {
-      response = await this.forecastSerice.getCurrentWeather(this.searchValue);
-      if (response === 'error') {
+      currentResponse = await this.forecastSerice.getCurrentWeather(this.searchValue);
+      oneDayForecastResponse = await this.forecastSerice.getForecastOneDay(this.searchValue);
+      if (currentResponse === 'error') {
         this.showErrorText();
         return;
       }
-      this.currentWeatherData = response;
+      this.currentWeatherData = currentResponse;
+      this.oneDayForecastData = oneDayForecastResponse;
+      console.log(this.oneDayForecastData);
+      
       let condition = this.currentWeatherData?.current.condition;
       if (condition !== undefined) {
         this.forecastIcon = this.forecastSerice.returnWeatherIcon(condition);
