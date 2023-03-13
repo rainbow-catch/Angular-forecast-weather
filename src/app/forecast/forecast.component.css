@@ -67,7 +67,7 @@
 
 .error-container h4 {
   position: absolute;
-  padding-top: 40px;
+  padding-top: 20px;
   color: #e91e1eb3;
 }
 
@@ -87,12 +87,13 @@
   justify-content: center;
 }
 
-.weather-icon-container{
+.weather-icon-container {
   padding-top: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .weather-icon {
   user-select: none;
   pointer-events: none;
@@ -100,9 +101,28 @@
   width: auto;
 }
 
-.weather-info-container{
+.weather-info-container {
   text-align: center;
 }
-.weather-info-container h4{
+
+.weather-info-container h4 {
   margin-bottom: 5px;
+}
+
+.three-day-forecast-container {
+  margin-top: 60px;
+  height: 150px;
+  width: 370px;
+  padding: 0 10px 0 10px;
+  background-color: #ffffff0f;
+  border-radius: 15px;
+  box-shadow: #1b1b1b05 1px 1px 1px 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.three-day-forecast{
+  flex: 0 0 32%;
+  height: 80%;
+  background-color: #fcfcfc;
 }
