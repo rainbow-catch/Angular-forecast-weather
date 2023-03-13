@@ -21,7 +21,11 @@
     <div class="weather-info-container" *ngIf="currentWeatherData">
       <h3>{{currentWeatherData.current.condition.text}}</h3>
       <h2>{{currentWeatherData.current.temp_c}}°C</h2>
+      <br>
       <h4>{{currentWeatherData.current.pressure_mb}} hPa</h4>
+      <div>
+        <h4>From {{oneDayForecastData?.forecast?.forecastday?.[0]?.day?.mintemp_c}}°C to {{oneDayForecastData?.forecast?.forecastday?.[0]?.day?.maxtemp_c}}°C</h4>
+      </div>
       <h5>Feelslike {{currentWeatherData.current.feelslike_c}}°C</h5>
     </div>
   </div>

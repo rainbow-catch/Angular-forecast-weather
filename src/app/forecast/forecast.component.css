@@ -1,7 +1,7 @@
 .maindiv {
   padding-top: 20px;
   background-color: #fff;
-  height: 400px;
+  height: 450px;
   width: 370px;
   border-radius: 15px;
 }
@@ -102,4 +102,7 @@
 
 .weather-info-container{
   text-align: center;
+}
+.weather-info-container h4{
+  margin-bottom: 5px;
 }
