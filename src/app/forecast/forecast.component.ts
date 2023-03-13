@@ -11,7 +11,7 @@ export class ForecastComponent implements OnInit {
   searchValue: string = '';
   mainDivClassList = 'closed';
   errorContainerClassList = 'invisible';
-  forecastData: forecastType | undefined = undefined;
+  currentWeatherData: forecastType | undefined = undefined;
   forecastIcon: string | undefined;
 
   constructor(private forecastSerice: ForecastService) {}
@@ -30,15 +30,15 @@ export class ForecastComponent implements OnInit {
   }
 
   formatDate() {
-    return this.forecastData?.location.localtime.substring(
+    return this.currentWeatherData?.location.localtime.substring(
       0,
-      this.forecastData.location.localtime.length - 5
+      this.currentWeatherData.location.localtime.length - 5
     );
   }
 
   closeMainDivEvent(e: KeyboardEvent) {
     if (e.key === 'Escape') {
-      this.forecastData = undefined;
+      this.currentWeatherData = undefined;
       this.closeMainDiv();
     }
   }
@@ -54,17 +54,17 @@ export class ForecastComponent implements OnInit {
     e.preventDefault();
     let response;
     if (this.searchValue !== null && this.searchValue !== '') {
-      response = await this.forecastSerice.getForecast(this.searchValue);
+      response = await this.forecastSerice.getCurrentWeather(this.searchValue);
       if (response === 'error') {
         this.showErrorText();
         return;
       }
-      this.forecastData = response;
-      let condition = this.forecastData?.current.condition;
+      this.currentWeatherData = response;
+      let condition = this.currentWeatherData?.current.condition;
       if (condition !== undefined) {
         this.forecastIcon = this.forecastSerice.returnWeatherIcon(condition);
       }
-      console.log(this.forecastData);
+      console.log(this.currentWeatherData);
       console.log(this.forecastIcon);
 
       this.openMainDiv();

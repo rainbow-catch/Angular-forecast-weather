@@ -11,18 +11,18 @@
     </form>
   </div>
   <div class="weather-info">
-    <div *ngIf="forecastData" class="location-info">
-      <h3>{{forecastData.location.name}}</h3>
-      <h3>, {{forecastData.location.country}}</h3>
+    <div *ngIf="currentWeatherData" class="location-info">
+      <h3>{{currentWeatherData.location.name}}</h3>
+      <h3>, {{currentWeatherData.location.country}}</h3>
     </div>
-    <div *ngIf="forecastData" class="weather-icon-container">
+    <div *ngIf="currentWeatherData" class="weather-icon-container">
       <img class="weather-icon" [src]="forecastIcon">
     </div>
-    <div class="weather-info-container" *ngIf="forecastData">
-      <h3>{{forecastData.current.condition.text}}</h3>
-      <h2>{{forecastData.current.temp_c}}°C</h2>
-      <h4>{{forecastData.current.pressure_mb}} hPa</h4>
-      <h5>Feelslike {{forecastData.current.feelslike_c}}°C</h5>
+    <div class="weather-info-container" *ngIf="currentWeatherData">
+      <h3>{{currentWeatherData.current.condition.text}}</h3>
+      <h2>{{currentWeatherData.current.temp_c}}°C</h2>
+      <h4>{{currentWeatherData.current.pressure_mb}} hPa</h4>
+      <h5>Feelslike {{currentWeatherData.current.feelslike_c}}°C</h5>
     </div>
   </div>
 </div>
