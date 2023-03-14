@@ -53,6 +53,12 @@ export class ForecastComponent implements OnInit {
     }, 2500);
   }
 
+  hideKeyboardMobile(e:KeyboardEvent) {
+    if (e.key == 'Enter' || e.key == 'Return') {
+      document.getElementById('searchInput')?.blur();
+    }
+  }
+
   async handleSearch(e: Event) {
     e.preventDefault();
     let currentResponse;
