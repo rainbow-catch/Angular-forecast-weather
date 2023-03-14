@@ -42,6 +42,7 @@ export class ForecastComponent implements OnInit {
     if (e.key === 'Escape') {
       this.currentWeatherData = undefined;
       this.closeMainDiv();
+      this.threeDaysForecastData = undefined;
     }
   }
 
