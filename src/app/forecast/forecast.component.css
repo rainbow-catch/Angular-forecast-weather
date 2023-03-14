@@ -143,3 +143,7 @@
 .three-day-forecast p{
   font-size: 15px;
 }
+
+@media screen and (max-width: 920px) {
+
+}

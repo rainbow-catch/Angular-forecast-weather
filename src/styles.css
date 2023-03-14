@@ -7,8 +7,25 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  min-height: 100% !important;
+  height: 100%;
+}
 
 body {
   background: #1d2835;
   font-family: 'Montserrat', sans-serif;
+}
+
+
+@media screen and (max-width: 920px) {
+  html,
+  body {
+    min-height: 100% !important;
+    height: 100% !important;
+    overflow: auto;
+    min-width: 100% !important;
+    width: 100% !important;
+  }
 }
