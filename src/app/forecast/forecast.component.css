@@ -122,8 +122,24 @@
   align-items: center;
 }
 .three-day-forecast{
+  padding-top: 2px;
+  user-select: none;
   flex: 0 0 32%;
   height: 80%;
   background-color: #fcfcfc;
   border-radius: 7px;
+  text-align: center;
+}
+.three-day-forecast img{
+  margin-top: 5px;
+  margin-bottom: 4px;
+  pointer-events: none;
+  height: 60px;
+  width: auto;
+}
+.three-day-forecast span{
+  font-size: 14px;
+}
+.three-day-forecast p{
+  font-size: 15px;
 }

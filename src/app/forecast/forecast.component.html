@@ -36,18 +36,21 @@
 </div>
 <div *ngIf="threeDaysForecastData" class="three-day-forecast-container">
   <div class="three-day-forecast">
-    <p>{{threeDaysForecastData.forecast?.forecastday?.[0]?.day?.mintemp_c}}°C -
-      {{threeDaysForecastData.forecast?.forecastday?.[0]?.day?.maxtemp_c}}°C</p>
+    <span>{{threeDaysForecastData.forecast?.forecastday?.[0]?.day?.mintemp_c}}°C -
+      {{threeDaysForecastData.forecast?.forecastday?.[0]?.day?.maxtemp_c}}°C</span>
       <img [src]="forecastIcons[0]">
+      <p>Today</p>
   </div>
   <div class="three-day-forecast">
-    <p>{{threeDaysForecastData.forecast?.forecastday?.[1]?.day?.mintemp_c}}°C -
-      {{threeDaysForecastData.forecast?.forecastday?.[1]?.day?.maxtemp_c}}°C</p>
+    <span>{{threeDaysForecastData.forecast?.forecastday?.[1]?.day?.mintemp_c}}°C -
+      {{threeDaysForecastData.forecast?.forecastday?.[1]?.day?.maxtemp_c}}°C</span>
       <img [src]="forecastIcons[1]">
+      <p>{{threeDaysForecastData.forecast?.forecastday?.[1]?.date}}</p>
   </div>
   <div class="three-day-forecast">
-    <p>{{threeDaysForecastData.forecast?.forecastday?.[2]?.day?.mintemp_c}}°C -
-      {{threeDaysForecastData.forecast?.forecastday?.[2]?.day?.maxtemp_c}}°C</p>
+    <span>{{threeDaysForecastData.forecast?.forecastday?.[2]?.day?.mintemp_c}}°C -
+      {{threeDaysForecastData.forecast?.forecastday?.[2]?.day?.maxtemp_c}}°C</span>
       <img [src]="forecastIcons[2]">
+      <p>{{threeDaysForecastData.forecast?.forecastday?.[2]?.date}}</p>
   </div>
 </div>
