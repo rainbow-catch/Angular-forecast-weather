@@ -13,7 +13,8 @@ export class ForecastComponent implements OnInit {
   errorContainerClassList = 'invisible';
   currentWeatherData: weatherType | undefined = undefined;
   threeDaysForecastData: weatherType | undefined = undefined;
-  forecastIcon: string | undefined;
+  forecastIcon: string = '';
+  forecastIcons: string[] = ['', '', ''];
 
   constructor(private forecastSerice: ForecastService) {}
 
@@ -56,8 +57,11 @@ export class ForecastComponent implements OnInit {
     let currentResponse;
     let threeDaysForecastResponse;
     if (this.searchValue !== null && this.searchValue !== '') {
-      currentResponse = await this.forecastSerice.getCurrentWeather(this.searchValue);
-      threeDaysForecastResponse = await this.forecastSerice.getForecastThreeDays(this.searchValue);
+      currentResponse = await this.forecastSerice.getCurrentWeather(
+        this.searchValue
+      );
+      threeDaysForecastResponse =
+        await this.forecastSerice.getForecastThreeDays(this.searchValue);
       if (currentResponse === 'error') {
         this.showErrorText();
         return;
@@ -65,13 +69,24 @@ export class ForecastComponent implements OnInit {
       this.currentWeatherData = currentResponse;
       this.threeDaysForecastData = threeDaysForecastResponse;
       console.log(this.threeDaysForecastData);
-      
-      let condition = this.currentWeatherData?.current.condition;
-      if (condition !== undefined) {
-        this.forecastIcon = this.forecastSerice.returnWeatherIcon(condition);
+      this.forecastIcons.forEach((icon, index) => {
+        if (
+          this.threeDaysForecastData?.forecast?.forecastday[index].day
+            .condition !== undefined
+        ) {
+          this.forecastIcons[index] = this.forecastSerice.returnWeatherIcon(
+            this.threeDaysForecastData?.forecast?.forecastday[index].day
+              .condition
+          );
+        }
+      });
+      if (this.currentWeatherData) {
+        this.forecastIcon = this.forecastSerice.returnWeatherIcon(
+          this.currentWeatherData?.current.condition
+        );
       }
       console.log(this.currentWeatherData);
-      console.log(this.forecastIcon);
+      console.log(this.forecastIcons);
 
       this.openMainDiv();
     }

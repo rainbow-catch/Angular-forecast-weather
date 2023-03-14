@@ -1,5 +1,5 @@
 export interface forecastType {
-  forecastday: [
+  forecastday: 
     {
       astro: {
         is_moon_up: number;
@@ -80,6 +80,6 @@ export interface forecastType {
           windchill_f: number;
         }
       ];
-    }
-  ];
+    }[]
+  ;
 }

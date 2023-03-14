@@ -24,7 +24,8 @@
       <br>
       <h4>{{currentWeatherData.current.pressure_mb}} hPa</h4>
       <div>
-        <h4>From {{threeDaysForecastData?.forecast?.forecastday?.[0]?.day?.mintemp_c}}°C to {{threeDaysForecastData?.forecast?.forecastday?.[0]?.day?.maxtemp_c}}°C</h4>
+        <h4>From {{threeDaysForecastData?.forecast?.forecastday?.[0]?.day?.mintemp_c}}°C to
+          {{threeDaysForecastData?.forecast?.forecastday?.[0]?.day?.maxtemp_c}}°C</h4>
       </div>
       <h5>Feelslike {{currentWeatherData.current.feelslike_c}}°C</h5>
     </div>
@@ -33,8 +34,20 @@
 <div [ngClass]=errorContainerClassList class="error-container">
   <h4>Cant' find this location</h4>
 </div>
-<div class="three-day-forecast-container">
-  <div class="three-day-forecast">1Day</div>
-  <div class="three-day-forecast">2Day</div>
-  <div class="three-day-forecast">3Day</div>
+<div *ngIf="threeDaysForecastData" class="three-day-forecast-container">
+  <div class="three-day-forecast">
+    <p>{{threeDaysForecastData.forecast?.forecastday?.[0]?.day?.mintemp_c}}°C -
+      {{threeDaysForecastData.forecast?.forecastday?.[0]?.day?.maxtemp_c}}°C</p>
+      <img [src]="forecastIcons[0]">
+  </div>
+  <div class="three-day-forecast">
+    <p>{{threeDaysForecastData.forecast?.forecastday?.[1]?.day?.mintemp_c}}°C -
+      {{threeDaysForecastData.forecast?.forecastday?.[1]?.day?.maxtemp_c}}°C</p>
+      <img [src]="forecastIcons[1]">
+  </div>
+  <div class="three-day-forecast">
+    <p>{{threeDaysForecastData.forecast?.forecastday?.[2]?.day?.mintemp_c}}°C -
+      {{threeDaysForecastData.forecast?.forecastday?.[2]?.day?.maxtemp_c}}°C</p>
+      <img [src]="forecastIcons[2]">
+  </div>
 </div>
