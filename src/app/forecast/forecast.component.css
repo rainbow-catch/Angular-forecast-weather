@@ -188,7 +188,7 @@
 
 
 @media screen and (max-width: 460px) {
-  *{
+  body{
     overflow: hidden;
   }
   .maindiv {
