@@ -4,6 +4,7 @@
   height: 450px;
   width: 370px;
   border-radius: 15px;
+  position: relative;
 }
 
 .closed {
@@ -12,7 +13,7 @@
 
 .search-container {
   transform: translateX(50px);
-  position: relative;
+  position: absolute;
 }
 
 .location-icon {
