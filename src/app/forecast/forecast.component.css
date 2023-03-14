@@ -177,10 +177,44 @@
   }
 
   .clock-container {
+    display: none;
+  }
+  .error-container h4 {
     position: absolute;
-    top: 50px;
-    left: 30px;
-    color: #fcfcfc;
+    padding-top: 15px;
+    color: #e91e1eb3;
+  }
+}
+
+
+@media screen and (max-width: 460px) {
+  *{
+    overflow: hidden;
+  }
+  .maindiv {
+    transform: scale(0.8);
+    height: 450px;
+    width: 370px;
+    border-radius: 15px;
+  }
+
+  .three-day-forecast-container {
+    width: 370px;
+    margin-top: 40px;
+    transform: scale(0.8);
+  }
+
+  .three-day-forecast {
+    transform: scale(0.8);
+  }
+
+  .closed {
+    height: 80px;
+  }
+
+  .search-container {
+    transform: translateX(45px);
+    position: absolute;
   }
   .error-container h4 {
     position: absolute;
