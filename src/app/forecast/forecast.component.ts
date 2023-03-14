@@ -12,7 +12,7 @@ export class ForecastComponent implements OnInit {
   mainDivClassList = 'closed';
   errorContainerClassList = 'invisible';
   currentWeatherData: weatherType | undefined = undefined;
-  oneDayForecastData: weatherType | undefined = undefined;
+  threeDaysForecastData: weatherType | undefined = undefined;
   forecastIcon: string | undefined;
 
   constructor(private forecastSerice: ForecastService) {}
@@ -54,17 +54,17 @@ export class ForecastComponent implements OnInit {
   async handleSearch(e: Event) {
     e.preventDefault();
     let currentResponse;
-    let oneDayForecastResponse;
+    let threeDaysForecastResponse;
     if (this.searchValue !== null && this.searchValue !== '') {
       currentResponse = await this.forecastSerice.getCurrentWeather(this.searchValue);
-      oneDayForecastResponse = await this.forecastSerice.getForecastOneDay(this.searchValue);
+      threeDaysForecastResponse = await this.forecastSerice.getForecastThreeDays(this.searchValue);
       if (currentResponse === 'error') {
         this.showErrorText();
         return;
       }
       this.currentWeatherData = currentResponse;
-      this.oneDayForecastData = oneDayForecastResponse;
-      console.log(this.oneDayForecastData);
+      this.threeDaysForecastData = threeDaysForecastResponse;
+      console.log(this.threeDaysForecastData);
       
       let condition = this.currentWeatherData?.current.condition;
       if (condition !== undefined) {

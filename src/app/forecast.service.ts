@@ -35,12 +35,12 @@ export class ForecastService {
     return res;
   }
 
-  getForecastOneDay(location: string) {
+  getForecastThreeDays(location: string) {
     location = this.removePolishLetters(location);
-    const apiKey = `http://api.weatherapi.com/v1/forecast.json?key=61dab060f224404b838130524230903&q=${location}&days=1&aqi=no&alerts=no`;
+    const apiKey = `http://api.weatherapi.com/v1/forecast.json?key=61dab060f224404b838130524230903&q=${location}&days=3&aqi=no&alerts=no`;
     const res = axios
-      .get(apiKey, { responseEncoding: 'utf8' })
-      .then((res) => {
+    .get(apiKey, { responseEncoding: 'utf8' })
+    .then((res) => {
         return res.data;
       })
       .catch(() => {
