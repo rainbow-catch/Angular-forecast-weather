@@ -1,27 +1,44 @@
-# WeatherApp
+# Weather forecast application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.9.
+---
 
-## Development server
+_Weather forecast application using Weather Api created in angular._
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Features
 
-## Code scaffolding
+- Searching for any location 🗿 
+- Showing current weather conditions and temperature 🌤 ️
+- Showing a three-day weather forecast ☁️🌥️☀️
+- Displaying error when location not found 🚫
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Live Link:
+[Angular weather app live link](https://angularweatherapplication.netlify.app)
 
-## Build
+### Future Plans:
+- Show more information about future forecast after clicking on it
+- Add autocomplete when searching for a location
+- Add a multilingualism
+- Probably something more 😊
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Stack:
+![stack](https://skillicons.dev/icons?i=typescript,angular)
 
-## Running unit tests
+### External APIs:
+- [Weather api](https://www.weatherapi.com/)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Installation
+_If you want to run app locally_
+- Clone or download repository
+- Install necessary dependencies ```npm install``` 
+- Run it  ``` npm start ```
+- Open http://localhost:4200/
+- Enjoy! 🎉
 
-## Running end-to-end tests
+## Presentation
+![Screenshot1](https://raw.githubusercontent.com/ajgoras/angular-weather-app/main/screenshots/1.png)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+![Screenshot2](https://raw.githubusercontent.com/ajgoras/angular-weather-app/main/screenshots/2.png)
 
-## Further help
+![Screenshot3](https://raw.githubusercontent.com/ajgoras/angular-weather-app/main/screenshots/3.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Screenshot4](https://raw.githubusercontent.com/ajgoras/angular-weather-app/main/screenshots/4.png)
