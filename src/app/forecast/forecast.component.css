@@ -5,6 +5,7 @@
   width: 370px;
   border-radius: 15px;
   position: relative;
+  transition: height .1s;
 }
 
 .closed {
@@ -74,8 +75,8 @@
 
 .clock-container {
   position: absolute;
-  margin-top: -50px;
-  margin-left: -60px;
+  top: 110px;
+  left: 400px;
   color: #fcfcfc;
 }
 
@@ -122,7 +123,8 @@
   justify-content: space-between;
   align-items: center;
 }
-.three-day-forecast{
+
+.three-day-forecast {
   padding-top: 2px;
   user-select: none;
   flex: 0 0 32%;
@@ -131,20 +133,58 @@
   border-radius: 7px;
   text-align: center;
 }
-.three-day-forecast img{
+
+.three-day-forecast img {
   margin-top: 5px;
   margin-bottom: 4px;
   pointer-events: none;
   height: 60px;
   width: auto;
 }
-.three-day-forecast span{
+
+.three-day-forecast span {
   font-size: 14px;
 }
-.three-day-forecast p{
+
+.three-day-forecast p {
   font-size: 15px;
 }
 
 @media screen and (max-width: 920px) {
+  .maindiv {
+    transform: scale(0.9);
+    height: 450px;
+    width: 360px;
+    border-radius: 15px;
+  }
 
+  .three-day-forecast-container {
+    margin-top: 40px;
+    transform: scale(0.9);
+  }
+
+  .three-day-forecast {
+    transform: scale(0.9);
+  }
+
+  .closed {
+    height: 80px;
+  }
+
+  .search-container {
+    transform: translateX(40px);
+    position: absolute;
+  }
+
+  .clock-container {
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    color: #fcfcfc;
+  }
+  .error-container h4 {
+    position: absolute;
+    padding-top: 15px;
+    color: #e91e1eb3;
+  }
 }
