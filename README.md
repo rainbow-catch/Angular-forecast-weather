@@ -25,7 +25,7 @@ _Weather forecast application using Weather Api created in Angular._
 
 ### Tech and dependencies:
 
-![Angular](https://img.shields.io/badge/-angular-red?style=for-the-badge&logo=angular) ![typescript](https://img.shields.io/badge/-typescript-yellow?style=for-the-badge&logo=typescript) ![html](https://img.shields.io/badge/-html-green?style=for-the-badge&logo=html5)
+![Angular](https://img.shields.io/badge/-angular-red?style=for-the-badge&logo=angular) ![typescript](https://img.shields.io/badge/-typescript-yellow?style=for-the-badge&logo=typescript) ![html](https://img.shields.io/badge/-html-green?style=for-the-badge&logo=html5)/
 ![css](https://img.shields.io/badge/-css-blue?style=for-the-badge&logo=css3) ![Axios](https://img.shields.io/badge/-Axios-purple?style=for-the-badge&logo=axios) ![WeatherApi](https://img.shields.io/badge/-WeatherApi-blue?style=for-the-badge)
 
 ### External APIs:
