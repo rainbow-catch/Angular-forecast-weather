@@ -2,7 +2,7 @@
 
 ---
 
-_Weather forecast application using Weather Api created in angular._
+_Weather forecast application using Weather Api created in Angular._
 
 ### Features
 
