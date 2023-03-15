@@ -18,15 +18,16 @@ _Weather forecast application using Weather Api created in angular._
 - Show more information about future forecast after clicking on it
 - Add autocomplete when searching for a location
 - Add a multilingualism
+- Add tests
 - Probably something more 😊
 
 ### Stack:
-![stack](https://skillicons.dev/icons?i=typescript,angular)
+![stack](https://skillicons.dev/icons?i=angular,html,css,typescript)
 
 ### External APIs:
 - [Weather api](https://www.weatherapi.com/)
 
-## Installation
+### Installation
 _If you want to run app locally_
 - Clone or download repository
 - Install necessary dependencies ```npm install``` 
