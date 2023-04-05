@@ -20,6 +20,7 @@ _Weather forecast application using Weather Api created in Angular._
 - Show more information about future forecast after clicking on it
 - Add autocomplete when searching for a location
 - Add a multilingualism
+- Add favourite location
 - Add tests
 - Probably something more 😊
 
