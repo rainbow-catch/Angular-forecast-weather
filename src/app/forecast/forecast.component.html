@@ -2,9 +2,13 @@
   <h3>{{formatDate()}}</h3>
 </div>
 <div [ngClass]=mainDivClassList class="maindiv">
+  <div [ngClass]="favouriteLocationContainerClassList">
+    <p (click)="openFavouriteLocation()">{{favouriteLocation}}</p>
+    <button (click)="removeFavouriteLocation()">X</button>
+  </div>
   <div class="search-container">
     <img class="location-icon" src="assets/icons/navigation.png">
-    <form (submit)="handleSearch($event)">
+    <form id="search-form" (submit)="handleSearch($event)">
       <input id="searchInput" (keydown)="closeMainDivEvent($event)" (keyup)="hideKeyboardMobile($event)" [value]="searchValue" (input)="handleChange($event)"
         placeholder="Enter location">
       <button type="submit">🔎</button>

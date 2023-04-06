@@ -11,7 +11,12 @@ export class LocalStorageService {
   }
 
   getData(key: string) {
-    return localStorage.getItem(key);
+    const result = localStorage.getItem(key);
+    if (result !== null && result !== undefined) {
+      return result;
+    } else {
+      return '';
+    }
   }
   removeData(key: string) {
     localStorage.removeItem(key);

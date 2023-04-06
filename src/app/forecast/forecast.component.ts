@@ -18,13 +18,26 @@ export class ForecastComponent implements OnInit {
   forecastIcons: string[] = ['', '', ''];
   starIconText = '☆';
   starIconClassList = 'star-icon';
+  favouriteLocation = '';
+  favouriteLocationContainerClassList = 'favourite-location-container';
 
   constructor(
     private forecastSerice: ForecastService,
     private localStorageService: LocalStorageService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.favouriteLocation =
+      this.localStorageService.getData('favourite-location');
+    if (
+      this.favouriteLocation === '' ||
+      this.favouriteLocation === null ||
+      this.favouriteLocation === undefined
+    ) {
+      this.favouriteLocationContainerClassList =
+        'favourite-location-container invisible';
+    }
+  }
 
   handleChange(e: any) {
     this.searchValue = e.target.value;
@@ -32,6 +45,8 @@ export class ForecastComponent implements OnInit {
 
   openMainDiv() {
     this.mainDivClassList = '';
+    this.favouriteLocationContainerClassList =
+      'favourite-location-container invisible';
   }
   closeMainDiv() {
     this.mainDivClassList = 'closed';
@@ -65,8 +80,8 @@ export class ForecastComponent implements OnInit {
     }
   }
 
-  async handleSearch(e: Event) {
-    e.preventDefault();
+  async handleSearch(e?: Event) {
+    e?.preventDefault();
     let currentResponse;
     let threeDaysForecastResponse;
     if (this.searchValue !== null && this.searchValue !== '') {
@@ -105,11 +120,6 @@ export class ForecastComponent implements OnInit {
     }
   }
   setAsFavouriteLocation() {
-    console.log(
-      this.currentWeatherData?.location.name +
-        '' +
-        this.currentWeatherData?.location.country
-    );
     this.starIconText = '★';
     this.starIconClassList = 'star-icon active';
     if (
@@ -119,8 +129,24 @@ export class ForecastComponent implements OnInit {
       this.localStorageService.saveData(
         'favourite-location',
         this.currentWeatherData?.location.name +
+          ', ' +
           this.currentWeatherData.location.country
       );
+      this.favouriteLocation =
+        this.currentWeatherData?.location.name +
+        ', ' +
+        this.currentWeatherData.location.country;
     }
+  }
+  removeFavouriteLocation() {
+    this.starIconText = '☆';
+    this.starIconClassList = 'star-icon';
+    this.favouriteLocationContainerClassList =
+      'favourite-location-container invisible';
+    this.localStorageService.removeData('favourite-location');
+  }
+  async openFavouriteLocation() {
+    this.searchValue = this.favouriteLocation;
+    this.handleSearch();
   }
 }

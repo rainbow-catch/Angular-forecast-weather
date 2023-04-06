@@ -12,6 +12,33 @@
   height: 80px;
 }
 
+.favourite-location-container{
+  width: 100%;
+  position: absolute;
+  top: -65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px;
+  background: #ffffff0f;
+  color: #fcfcfc;
+  border-radius: 5px;
+}
+.favourite-location-container p{
+  opacity: .3;
+  user-select: none;
+}
+.favourite-location-container button{
+  opacity: .8;
+  height: 22px;
+  width: 22px;
+  border-radius: 5px;
+  border: none;
+}
+.favourite-location-container button:hover{
+  cursor: pointer;
+}
+
 .search-container {
   transform: translateX(50px);
   position: absolute;
