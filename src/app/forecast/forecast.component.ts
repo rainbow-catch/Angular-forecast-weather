@@ -118,6 +118,7 @@ export class ForecastComponent implements OnInit {
 
       this.openMainDiv();
     }
+    this.checkFavouriteLocation();
   }
   setAsFavouriteLocation() {
     this.starIconText = '★';
@@ -148,5 +149,17 @@ export class ForecastComponent implements OnInit {
   async openFavouriteLocation() {
     this.searchValue = this.favouriteLocation;
     this.handleSearch();
+  }
+
+  checkFavouriteLocation() {
+    if (
+      this.currentWeatherData?.location.name +
+        ', ' +
+        this.currentWeatherData?.location.country ===
+      this.favouriteLocation
+    ) {
+      this.starIconText = '★';
+      this.starIconClassList = 'star-icon active';
+    }
   }
 }
