@@ -98,4 +98,8 @@ export class ForecastComponent implements OnInit {
       this.openMainDiv();
     }
   }
+  setAsFavouriteLocation() {
+    console.log(this.currentWeatherData?.location.name + "" + this.currentWeatherData?.location.country);
+    
+  }
 }

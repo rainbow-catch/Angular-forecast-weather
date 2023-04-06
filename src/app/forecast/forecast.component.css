@@ -86,10 +86,9 @@
 
 .star-icon{
   position: absolute;
-  margin-left: 15px;
   font-size: 28px;
   top: 85px;
-  left: 370px;
+  left: 390px;
   color: whitesmoke;
   user-select: none;
 }
@@ -209,6 +208,11 @@
     height: 450px;
     width: 370px;
     border-radius: 15px;
+  }
+  .star-icon{
+    font-size: 26px;
+    top: -45px;
+    left: 310px;
   }
 
   .three-day-forecast-container {
