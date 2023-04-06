@@ -15,6 +15,8 @@ export class ForecastComponent implements OnInit {
   threeDaysForecastData: weatherType | undefined = undefined;
   forecastIcon: string = '';
   forecastIcons: string[] = ['', '', ''];
+  starIconText = "☆";
+  starIconClassList = 'star-icon'
 
   constructor(private forecastSerice: ForecastService) {}
 
@@ -100,6 +102,7 @@ export class ForecastComponent implements OnInit {
   }
   setAsFavouriteLocation() {
     console.log(this.currentWeatherData?.location.name + "" + this.currentWeatherData?.location.country);
-    
+    this.starIconText = '★'
+    this.starIconClassList = 'star-icon active';
   }
 }

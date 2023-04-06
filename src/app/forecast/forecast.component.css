@@ -85,12 +85,16 @@
 }
 
 .star-icon{
+  transition: transform .15s ease-in-out;
   position: absolute;
   font-size: 28px;
   top: 85px;
   left: 390px;
   color: whitesmoke;
   user-select: none;
+}
+.star-icon.active{
+  transform: rotateZ(360deg);
 }
 .star-icon:hover{
   cursor: pointer;
