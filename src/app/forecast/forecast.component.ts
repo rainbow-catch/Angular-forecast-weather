@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { weatherType } from 'src/types/weatherType';
 import { ForecastService } from '../forecast.service';
+import { LocalStorageService } from '../local-storage.service';
 
 @Component({
   selector: 'app-forecast',
@@ -15,10 +16,13 @@ export class ForecastComponent implements OnInit {
   threeDaysForecastData: weatherType | undefined = undefined;
   forecastIcon: string = '';
   forecastIcons: string[] = ['', '', ''];
-  starIconText = "☆";
-  starIconClassList = 'star-icon'
+  starIconText = '☆';
+  starIconClassList = 'star-icon';
 
-  constructor(private forecastSerice: ForecastService) {}
+  constructor(
+    private forecastSerice: ForecastService,
+    private localStorageService: LocalStorageService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -55,7 +59,7 @@ export class ForecastComponent implements OnInit {
     }, 2500);
   }
 
-  hideKeyboardMobile(e:KeyboardEvent) {
+  hideKeyboardMobile(e: KeyboardEvent) {
     if (e.key == 'Enter' || e.key == 'Return') {
       document.getElementById('searchInput')?.blur();
     }
@@ -101,8 +105,12 @@ export class ForecastComponent implements OnInit {
     }
   }
   setAsFavouriteLocation() {
-    console.log(this.currentWeatherData?.location.name + "" + this.currentWeatherData?.location.country);
-    this.starIconText = '★'
+    console.log(
+      this.currentWeatherData?.location.name +
+        '' +
+        this.currentWeatherData?.location.country
+    );
+    this.starIconText = '★';
     this.starIconClassList = 'star-icon active';
   }
 }
