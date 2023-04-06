@@ -84,6 +84,19 @@
   margin-top: 50px;
 }
 
+.star-icon{
+  position: absolute;
+  margin-left: 15px;
+  font-size: 28px;
+  top: 85px;
+  left: 370px;
+  color: whitesmoke;
+  user-select: none;
+}
+.star-icon:hover{
+  cursor: pointer;
+}
+
 .location-info {
   display: flex;
   justify-content: center;

@@ -14,6 +14,7 @@
     <div *ngIf="currentWeatherData" class="location-info">
       <h3>{{currentWeatherData.location.name}}</h3>
       <h3>, {{currentWeatherData.location.country}}</h3>
+      <div class="star-icon">&#9734;</div>
     </div>
     <div *ngIf="currentWeatherData" class="weather-icon-container">
       <img class="weather-icon" [src]="forecastIcon">
