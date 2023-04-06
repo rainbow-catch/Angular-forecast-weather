@@ -112,5 +112,15 @@ export class ForecastComponent implements OnInit {
     );
     this.starIconText = '★';
     this.starIconClassList = 'star-icon active';
+    if (
+      this.currentWeatherData?.location.name &&
+      this.currentWeatherData.location.country
+    ) {
+      this.localStorageService.saveData(
+        'favourite-location',
+        this.currentWeatherData?.location.name +
+          this.currentWeatherData.location.country
+      );
+    }
   }
 }
