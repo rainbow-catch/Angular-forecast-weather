@@ -27,6 +27,7 @@
 .favourite-location-container p{
   opacity: .3;
   user-select: none;
+  cursor: pointer;
 }
 .favourite-location-container button{
   opacity: .8;
