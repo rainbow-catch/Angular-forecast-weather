@@ -21,7 +21,16 @@
       <div (click)="setAsFavouriteLocation()" [ngClass]="starIconClassList">{{starIconText}}</div>
     </div>
     <div *ngIf="currentWeatherData" class="weather-icon-container">
-      <img class="weather-icon" [src]="forecastIcon">
+      <img *ngIf="!displayForecast" class="weather-icon" [src]="forecastIcon">
+      <div *ngIf="displayForecast" class="weather-hour-forecast">
+        <div *ngFor="let hour of hourForecast ; index as i;">
+          <div *ngIf="hourForecast" class="weather-hour-element">
+            <span>{{hourForecast[i].temp_c}}°C</span>
+            <img class="hour-weather-icon" [src]="hourForecast[i].condition.icon">
+            <span>{{i}}:00</span>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="weather-info-container" *ngIf="currentWeatherData">
       <h3>{{currentWeatherData.current.condition.text}}</h3>
@@ -40,19 +49,19 @@
   <h4>Cant' find this location</h4>
 </div>
 <div *ngIf="threeDaysForecastData" class="three-day-forecast-container">
-  <div class="three-day-forecast">
+  <div (click)="openDay(0)" class="three-day-forecast">
     <span>{{threeDaysForecastData.forecast?.forecastday?.[0]?.day?.mintemp_c}}°C -
       {{threeDaysForecastData.forecast?.forecastday?.[0]?.day?.maxtemp_c}}°C</span>
       <img [src]="forecastIcons[0]">
       <p>Today</p>
   </div>
-  <div class="three-day-forecast">
+  <div (click)="openDay(1)" class="three-day-forecast">
     <span>{{threeDaysForecastData.forecast?.forecastday?.[1]?.day?.mintemp_c}}°C -
       {{threeDaysForecastData.forecast?.forecastday?.[1]?.day?.maxtemp_c}}°C</span>
       <img [src]="forecastIcons[1]">
       <p>{{threeDaysForecastData.forecast?.forecastday?.[1]?.date}}</p>
   </div>
-  <div class="three-day-forecast">
+  <div (click)="openDay(2)" class="three-day-forecast">
     <span>{{threeDaysForecastData.forecast?.forecastday?.[2]?.day?.mintemp_c}}°C -
       {{threeDaysForecastData.forecast?.forecastday?.[2]?.day?.maxtemp_c}}°C</span>
       <img [src]="forecastIcons[2]">
