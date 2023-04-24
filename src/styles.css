@@ -24,7 +24,7 @@ body {
   body {
     min-height: 100% !important;
     height: 100% !important;
-    overflow: auto;
+    overflow: hidden;
     min-width: 100% !important;
     width: 100% !important;
   }
