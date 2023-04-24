@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { weatherType } from 'src/types/weatherType';
 import { ForecastService } from '../forecast.service';
 import { LocalStorageService } from '../local-storage.service';
+import { hourForecastType } from 'src/types/hourForecastType';
 
 @Component({
   selector: 'app-forecast',
@@ -20,6 +21,8 @@ export class ForecastComponent implements OnInit {
   starIconClassList = 'star-icon';
   favouriteLocation = '';
   favouriteLocationContainerClassList = 'favourite-location-container';
+  displayForecast: boolean = false;
+  hourForecast: hourForecastType[] | undefined = [];
 
   constructor(
     private forecastSerice: ForecastService,
@@ -77,6 +80,39 @@ export class ForecastComponent implements OnInit {
   hideKeyboardMobile(e: KeyboardEvent) {
     if (e.key == 'Enter' || e.key == 'Return') {
       document.getElementById('searchInput')?.blur();
+    }
+  }
+
+  openDay(day: 0 | 1 | 2) {
+    if (!this.displayForecast) {
+      this.displayForecast = !this.displayForecast;
+    }
+    if (day === 0) {
+      this.hourForecast =
+        this.threeDaysForecastData?.forecast?.forecastday[0].hour;
+      this.hourForecast?.forEach((hour) => {
+        hour.condition.icon = this.forecastSerice.returnWeatherIcon(
+          hour.condition
+        );
+      });
+    }
+    if (day === 1) {
+      this.hourForecast =
+        this.threeDaysForecastData?.forecast?.forecastday[1].hour;
+      this.hourForecast?.forEach((hour) => {
+        hour.condition.icon = this.forecastSerice.returnWeatherIcon(
+          hour.condition
+        );
+      });
+    }
+    if (day === 2) {
+      this.hourForecast =
+        this.threeDaysForecastData?.forecast?.forecastday[2].hour;
+      this.hourForecast?.forEach((hour) => {
+        hour.condition.icon = this.forecastSerice.returnWeatherIcon(
+          hour.condition
+        );
+      });
     }
   }
 
