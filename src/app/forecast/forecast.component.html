@@ -9,8 +9,8 @@
   <div class="search-container">
     <img class="location-icon" src="assets/icons/navigation.png">
     <form id="search-form" (submit)="handleSearch($event)">
-      <input id="searchInput" (keydown)="closeMainDivEvent($event)" (keyup)="hideKeyboardMobile($event)" [value]="searchValue" (input)="handleChange($event)"
-        placeholder="Enter location">
+      <input id="searchInput" (keydown)="closeMainDivEvent($event)" (keyup)="hideKeyboardMobile($event)"
+        [value]="searchValue" (input)="handleChange($event)" placeholder="Enter location">
       <button type="submit">🔎</button>
     </form>
   </div>
@@ -34,15 +34,39 @@
       </div>
     </div>
     <div class="weather-info-container" *ngIf="currentWeatherData">
-      <h3>{{currentWeatherData.current.condition.text}}</h3>
-      <h2>{{currentWeatherData.current.temp_c}}°C</h2>
-      <br>
-      <h4>{{currentWeatherData.current.pressure_mb}} hPa</h4>
-      <div>
-        <h4>From {{threeDaysForecastData?.forecast?.forecastday?.[selectedDay]?.day?.mintemp_c}}°C to
-          {{threeDaysForecastData?.forecast?.forecastday?.[selectedDay]?.day?.maxtemp_c}}°C</h4>
+      <div *ngIf="selectedDay===0;">
+        <h3>{{currentWeatherData.current.condition.text}}</h3>
+        <h2>{{currentWeatherData.current.temp_c}}°C</h2>
+        <br>
+        <h4>{{currentWeatherData.current.pressure_mb}} hPa</h4>
+        <div>
+          <h4>From {{threeDaysForecastData?.forecast?.forecastday?.[selectedDay]?.day?.mintemp_c}}°C to
+            {{threeDaysForecastData?.forecast?.forecastday?.[selectedDay]?.day?.maxtemp_c}}°C</h4>
+        </div>
+        <h5>Feelslike {{currentWeatherData.current.feelslike_c}}°C</h5>
       </div>
-      <h5>Feelslike {{currentWeatherData.current.feelslike_c}}°C</h5>
+      <div *ngIf="selectedDay===1;">
+        <h3>{{selectedDayForecastData?.condition?.text}}</h3>
+        <h2>{{selectedDayForecastData?.avgtemp_c}}°C</h2>
+        <br>
+        <h4></h4>
+        <div>
+          <h4>From {{threeDaysForecastData?.forecast?.forecastday?.[selectedDay]?.day?.mintemp_c}}°C to
+            {{threeDaysForecastData?.forecast?.forecastday?.[selectedDay]?.day?.maxtemp_c}}°C</h4>
+        </div>
+        <h5></h5>
+      </div>
+      <div *ngIf="selectedDay===2;">
+        <h3>{{selectedDayForecastData?.condition?.text}}</h3>
+        <h2>{{selectedDayForecastData?.avgtemp_c}}°C</h2>
+        <br>
+        <h4></h4>
+        <div>
+          <h4>From {{threeDaysForecastData?.forecast?.forecastday?.[selectedDay]?.day?.mintemp_c}}°C to
+            {{threeDaysForecastData?.forecast?.forecastday?.[selectedDay]?.day?.maxtemp_c}}°C</h4>
+        </div>
+        <h5></h5>
+      </div>
     </div>
   </div>
 </div>
@@ -53,19 +77,19 @@
   <div (click)="openDay(0)" class="three-day-forecast">
     <span>{{threeDaysForecastData.forecast?.forecastday?.[0]?.day?.mintemp_c}}°C -
       {{threeDaysForecastData.forecast?.forecastday?.[0]?.day?.maxtemp_c}}°C</span>
-      <img [src]="forecastIcons[0]">
-      <p>Today</p>
+    <img [src]="forecastIcons[0]">
+    <p>Today</p>
   </div>
   <div (click)="openDay(1)" class="three-day-forecast">
     <span>{{threeDaysForecastData.forecast?.forecastday?.[1]?.day?.mintemp_c}}°C -
       {{threeDaysForecastData.forecast?.forecastday?.[1]?.day?.maxtemp_c}}°C</span>
-      <img [src]="forecastIcons[1]">
-      <p>{{threeDaysForecastData.forecast?.forecastday?.[1]?.date}}</p>
+    <img [src]="forecastIcons[1]">
+    <p>{{threeDaysForecastData.forecast?.forecastday?.[1]?.date}}</p>
   </div>
   <div (click)="openDay(2)" class="three-day-forecast">
     <span>{{threeDaysForecastData.forecast?.forecastday?.[2]?.day?.mintemp_c}}°C -
       {{threeDaysForecastData.forecast?.forecastday?.[2]?.day?.maxtemp_c}}°C</span>
-      <img [src]="forecastIcons[2]">
-      <p>{{threeDaysForecastData.forecast?.forecastday?.[2]?.date}}</p>
+    <img [src]="forecastIcons[2]">
+    <p>{{threeDaysForecastData.forecast?.forecastday?.[2]?.date}}</p>
   </div>
 </div>
