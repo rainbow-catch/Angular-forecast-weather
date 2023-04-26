@@ -23,6 +23,7 @@
     <div *ngIf="currentWeatherData" class="weather-icon-container">
       <img *ngIf="!displayForecast" class="weather-icon" [src]="forecastIcon">
       <div *ngIf="displayForecast" class="weather-hour-forecast">
+        <button>X</button>
         <div *ngFor="let hour of hourForecast ; index as i;">
           <div *ngIf="hourForecast" class="weather-hour-element">
             <span>{{hourForecast[i].temp_c}}°C</span>
