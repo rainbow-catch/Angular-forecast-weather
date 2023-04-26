@@ -3,6 +3,7 @@ import { weatherType } from 'src/types/weatherType';
 import { ForecastService } from '../forecast.service';
 import { LocalStorageService } from '../local-storage.service';
 import { hourForecastType } from 'src/types/hourForecastType';
+import { futureDayForecastType } from 'src/types/futureDayForecastType';
 
 @Component({
   selector: 'app-forecast',
@@ -23,6 +24,8 @@ export class ForecastComponent implements OnInit {
   favouriteLocationContainerClassList = 'favourite-location-container';
   displayForecast: boolean = false;
   hourForecast: hourForecastType[] | undefined = [];
+  selectedDay = 0;
+  selectedDayForecastData: futureDayForecastType | undefined;
 
   constructor(
     private forecastSerice: ForecastService,
@@ -83,7 +86,7 @@ export class ForecastComponent implements OnInit {
     }
   }
 
-  openDay(day: 0 | 1 | 2) {
+  openDay(day: 0 | 1 | 2) {    
     if (!this.displayForecast) {
       this.displayForecast = !this.displayForecast;
     }
@@ -95,6 +98,7 @@ export class ForecastComponent implements OnInit {
           hour.condition
         );
       });
+      this.selectedDay = 0;
     }
     if (day === 1) {
       this.hourForecast =
@@ -104,6 +108,10 @@ export class ForecastComponent implements OnInit {
           hour.condition
         );
       });
+      this.selectedDay = 1;
+      if (this.threeDaysForecastData?.forecast) {
+        this.selectedDayForecastData = this.threeDaysForecastData?.forecast?.forecastday[1].day;
+      }
     }
     if (day === 2) {
       this.hourForecast =
@@ -113,11 +121,16 @@ export class ForecastComponent implements OnInit {
           hour.condition
         );
       });
+      this.selectedDay = 2;
+      if (this.threeDaysForecastData?.forecast) {
+        this.selectedDayForecastData = this.threeDaysForecastData?.forecast?.forecastday[2].day;
+      }
     }
   }
 
   closeThreeDayForecast() {
     this.displayForecast = false;
+    this.selectedDay = 0;
   }
 
   async handleSearch(e?: Event) {
