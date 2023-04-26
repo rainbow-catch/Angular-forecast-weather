@@ -12,7 +12,7 @@
   height: 80px;
 }
 
-.favourite-location-container{
+.favourite-location-container {
   width: 100%;
   position: absolute;
   top: -65px;
@@ -24,19 +24,22 @@
   color: #fcfcfc;
   border-radius: 5px;
 }
-.favourite-location-container p{
+
+.favourite-location-container p {
   opacity: .3;
   user-select: none;
   cursor: pointer;
 }
-.favourite-location-container button{
+
+.favourite-location-container button {
   opacity: .8;
   height: 22px;
   width: 22px;
   border-radius: 5px;
   border: none;
 }
-.favourite-location-container button:hover{
+
+.favourite-location-container button:hover {
   cursor: pointer;
 }
 
@@ -53,7 +56,7 @@
   transform: translate(-33px, 4px);
 }
 
-.weather-hour-forecast{
+.weather-hour-forecast {
   padding-left: 1370px;
   padding-right: 50px;
   height: 113px;
@@ -62,16 +65,33 @@
   justify-content: center;
   align-items: center;
 }
-.weather-hour-element{
+
+.weather-hour-element {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin: 0 10px 0 10px;
 }
-.weather-hour-element img{
+
+.weather-hour-element img {
   height: 50px;
   width: auto;
+}
+
+#close-hour-forecast-button {
+  background-color: #b2b2b2;
+  height: 25px;
+  width: 25px;
+  border-radius: 5px;
+  border: none;
+  position: absolute;
+  top: 70px;
+  left: 325px;
+}
+
+#close-hour-forecast-button:hover {
+  cursor: pointer;
 }
 
 .search-container input {
@@ -133,7 +153,7 @@
   margin-top: 50px;
 }
 
-.star-icon{
+.star-icon {
   transition: transform .15s ease-in-out;
   position: absolute;
   font-size: 28px;
@@ -142,10 +162,12 @@
   color: whitesmoke;
   user-select: none;
 }
-.star-icon.active{
+
+.star-icon.active {
   transform: rotateZ(360deg);
 }
-.star-icon:hover{
+
+.star-icon:hover {
   cursor: pointer;
 }
 
@@ -245,6 +267,7 @@
   .clock-container {
     display: none;
   }
+
   .error-container h4 {
     position: absolute;
     padding-top: 15px;
@@ -254,16 +277,18 @@
 
 
 @media screen and (max-width: 460px) {
-  body{
+  body {
     overflow: hidden;
   }
+
   .maindiv {
     transform: scale(0.8);
     height: 450px;
     width: 370px;
     border-radius: 15px;
   }
-  .star-icon{
+
+  .star-icon {
     font-size: 26px;
     top: -45px;
     left: 310px;
@@ -287,9 +312,19 @@
     transform: translateX(45px);
     position: absolute;
   }
+
   .error-container h4 {
     position: absolute;
     padding-top: 15px;
     color: #e91e1eb3;
   }
+
+}
+
+@media only screen and (hover: none) and (pointer: coarse) {
+
+  .weather-icon-container::-webkit-scrollbar {
+    opacity: 0;
+  }
+
 }

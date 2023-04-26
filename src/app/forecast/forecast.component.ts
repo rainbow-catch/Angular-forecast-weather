@@ -116,6 +116,10 @@ export class ForecastComponent implements OnInit {
     }
   }
 
+  closeThreeDayForecast() {
+    this.displayForecast = false;
+  }
+
   async handleSearch(e?: Event) {
     e?.preventDefault();
     let currentResponse;
