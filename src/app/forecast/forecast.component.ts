@@ -23,6 +23,7 @@ export class ForecastComponent implements OnInit {
   favouriteLocationContainerClassList = 'favourite-location-container';
   displayForecast: boolean = false;
   hourForecast: hourForecastType[] | undefined = [];
+  selectedDay = 0;
 
   constructor(
     private forecastSerice: ForecastService,
@@ -84,6 +85,8 @@ export class ForecastComponent implements OnInit {
   }
 
   openDay(day: 0 | 1 | 2) {
+    console.log(this.threeDaysForecastData?.forecast?.forecastday[0].day);
+    
     if (!this.displayForecast) {
       this.displayForecast = !this.displayForecast;
     }
@@ -95,6 +98,7 @@ export class ForecastComponent implements OnInit {
           hour.condition
         );
       });
+      this.selectedDay = 0;
     }
     if (day === 1) {
       this.hourForecast =
@@ -104,6 +108,7 @@ export class ForecastComponent implements OnInit {
           hour.condition
         );
       });
+      this.selectedDay = 1;
     }
     if (day === 2) {
       this.hourForecast =
@@ -113,11 +118,13 @@ export class ForecastComponent implements OnInit {
           hour.condition
         );
       });
+      this.selectedDay = 2;
     }
   }
 
   closeThreeDayForecast() {
     this.displayForecast = false;
+    this.selectedDay = 0;
   }
 
   async handleSearch(e?: Event) {

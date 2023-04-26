@@ -39,8 +39,8 @@
       <br>
       <h4>{{currentWeatherData.current.pressure_mb}} hPa</h4>
       <div>
-        <h4>From {{threeDaysForecastData?.forecast?.forecastday?.[0]?.day?.mintemp_c}}°C to
-          {{threeDaysForecastData?.forecast?.forecastday?.[0]?.day?.maxtemp_c}}°C</h4>
+        <h4>From {{threeDaysForecastData?.forecast?.forecastday?.[selectedDay]?.day?.mintemp_c}}°C to
+          {{threeDaysForecastData?.forecast?.forecastday?.[selectedDay]?.day?.maxtemp_c}}°C</h4>
       </div>
       <h5>Feelslike {{currentWeatherData.current.feelslike_c}}°C</h5>
     </div>
