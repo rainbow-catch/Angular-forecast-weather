@@ -74,6 +74,21 @@
   width: auto;
 }
 
+#close-hour-forecast-button{
+  background-color: #b2b2b2;
+  height: 25px;
+  width: 25px;
+  border-radius: 5px;
+  border: none;
+  position: absolute;
+  top: 70px;
+  left: 325px;
+}
+
+#close-hour-forecast-button:hover{
+  cursor: pointer;
+}
+
 .search-container input {
   font-family: 'Montserrat', Helvetica, sans-serif;
   font-size: 15px;
