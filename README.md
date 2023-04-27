@@ -10,6 +10,7 @@ _Weather forecast application using Weather Api created in Angular._
 - Showing current weather conditions and temperature 🌤 ️
 - Showing a three-day weather forecast ☁️🌥️☀️
 - Displaying error when location not found 🚫
+- Showing more information about future days after clicking on them ✨
 - Favourite location ⭐️
 
 ### Live Link:
@@ -18,7 +19,6 @@ _Weather forecast application using Weather Api created in Angular._
 
 ### Future Plans:
 
-- Show more information about future forecast after clicking on it
 - Add autocomplete when searching for a location
 - Add a multilingualism
 - Add tests
