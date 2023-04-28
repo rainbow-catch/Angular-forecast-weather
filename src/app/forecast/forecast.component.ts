@@ -180,6 +180,11 @@ export class ForecastComponent implements OnInit {
       console.log(this.forecastIcons);
 
       this.openMainDiv();
+      this.searchValue = '';
+      const input: any = document.querySelector(
+        '.ng-autocomplete .autocomplete-container input'
+      );
+      input.value = '';
     }
     this.checkFavouriteLocation();
   }
