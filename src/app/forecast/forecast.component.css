@@ -94,7 +94,7 @@
   cursor: pointer;
 }
 
-.search-container input {
+/* .search-container input {
   font-family: 'Montserrat', Helvetica, sans-serif;
   font-size: 15px;
   height: 35px;
@@ -104,6 +104,39 @@
   background-color: #fff;
   padding: 5px;
   text-align: center;
+} */
+
+.ng-autocomplete {
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  font-size: 15px;
+  height: 35px;
+  width: 280px;
+  border-radius: 15px;
+  border: transparent solid 1.5px;
+  background-color: #fff;
+  text-align: center;
+  transform: translateY(-20px);
+}
+
+.ng-autocomplete ::ng-deep .autocomplete-container {
+  box-shadow: none;
+}
+
+.ng-autocomplete ::ng-deep .autocomplete-container input {
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  font-size: 15px;
+  height: 35px;
+  width: 240px;
+  border-radius: 15px;
+  border: transparent solid 1.5px;
+  background-color: #fff;
+  padding: 5px;
+  text-align: center;
+  transform: translateY(3px);
+}
+
+.ng-autocomplete ::ng-deep .autocomplete-container ::ng-deep .not-found {
+  display: none !important;
 }
 
 .search-container input:focus::placeholder {
@@ -116,7 +149,7 @@
   border: transparent 1.5px solid;
   padding: 7px 9px 7px 9px;
   background-color: transparent;
-  transform: translateX(-34px);
+  transform: translate(284px, -32px);
   transition: background-color .2s ease-in-out;
 }
 
