@@ -135,6 +135,10 @@
   transform: translateY(3px);
 }
 
+.ng-autocomplete ::ng-deep .autocomplete-container input:focus::placeholder{
+  opacity: .3;
+}
+
 .ng-autocomplete ::ng-deep .autocomplete-container ::ng-deep .not-found {
   display: none !important;
 }
