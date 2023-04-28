@@ -9,8 +9,17 @@
   <div class="search-container">
     <img class="location-icon" src="assets/icons/navigation.png">
     <form id="search-form" (submit)="handleSearch($event)">
-      <input id="searchInput" (keydown)="closeMainDivEvent($event)" (keyup)="hideKeyboardMobile($event)"
-        [value]="searchValue" (input)="handleChange($event)" placeholder="Enter location">
+      <div class="ng-autocomplete">
+        <ng-autocomplete id="searchInput" (input)="handleChange($event)" (keydown)="closeMainDivEvent($event)"
+          (keyup)="hideKeyboardMobile($event)" [data]="autocompleteArray" searchKeyword='name'
+          placeholder="Enter location" [itemTemplate]="itemTemplate" (selected)="handleSearch()">
+        </ng-autocomplete>
+        <ng-template #itemTemplate let-item>
+          <a [innerHTML]="item.name"></a>
+        </ng-template>
+      </div>
+      <!-- <input autocomplete="address-level1" id="searchInput" (keydown)="closeMainDivEvent($event)" (keyup)="hideKeyboardMobile($event)"
+        [value]="searchValue" (input)="handleChange($event)" placeholder="Enter location"> -->
       <button type="submit">🔎</button>
     </form>
   </div>

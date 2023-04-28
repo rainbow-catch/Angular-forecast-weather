@@ -4,6 +4,7 @@ import { ForecastService } from '../forecast.service';
 import { LocalStorageService } from '../local-storage.service';
 import { hourForecastType } from 'src/types/hourForecastType';
 import { futureDayForecastType } from 'src/types/futureDayForecastType';
+import { AutocompleteService } from '../autocomplete.service';
 
 @Component({
   selector: 'app-forecast',
@@ -26,10 +27,12 @@ export class ForecastComponent implements OnInit {
   hourForecast: hourForecastType[] | undefined = [];
   selectedDay = 0;
   selectedDayForecastData: futureDayForecastType | undefined;
+  autocompleteArray = [];
 
   constructor(
     private forecastSerice: ForecastService,
-    private localStorageService: LocalStorageService
+    private localStorageService: LocalStorageService,
+    private autocompleteService: AutocompleteService
   ) {}
 
   ngOnInit(): void {
@@ -47,6 +50,12 @@ export class ForecastComponent implements OnInit {
 
   handleChange(e: any) {
     this.searchValue = e.target.value;
+    const getAutocomplete = async () => {
+      this.autocompleteArray =
+        await this.autocompleteService.getAutocompleteRes(e.target.value);
+      console.log(this.autocompleteArray);
+    };
+    getAutocomplete();
   }
 
   openMainDiv() {
@@ -86,7 +95,7 @@ export class ForecastComponent implements OnInit {
     }
   }
 
-  openDay(day: 0 | 1 | 2) {    
+  openDay(day: 0 | 1 | 2) {
     if (!this.displayForecast) {
       this.displayForecast = !this.displayForecast;
     }
@@ -110,7 +119,8 @@ export class ForecastComponent implements OnInit {
       });
       this.selectedDay = 1;
       if (this.threeDaysForecastData?.forecast) {
-        this.selectedDayForecastData = this.threeDaysForecastData?.forecast?.forecastday[1].day;
+        this.selectedDayForecastData =
+          this.threeDaysForecastData?.forecast?.forecastday[1].day;
       }
     }
     if (day === 2) {
@@ -123,7 +133,8 @@ export class ForecastComponent implements OnInit {
       });
       this.selectedDay = 2;
       if (this.threeDaysForecastData?.forecast) {
-        this.selectedDayForecastData = this.threeDaysForecastData?.forecast?.forecastday[2].day;
+        this.selectedDayForecastData =
+          this.threeDaysForecastData?.forecast?.forecastday[2].day;
       }
     }
   }
