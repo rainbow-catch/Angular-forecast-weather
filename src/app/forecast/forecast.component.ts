@@ -53,7 +53,6 @@ export class ForecastComponent implements OnInit {
     const getAutocomplete = async () => {
       this.autocompleteArray =
         await this.autocompleteService.getAutocompleteRes(e.target.value);
-      console.log(this.autocompleteArray);
     };
     getAutocomplete();
   }
