@@ -12,7 +12,7 @@ _Weather forecast application using Weather Api created in Angular._
 - Displaying error when location not found 🚫
 - Showing more information about future days after clicking on them ✨
 - Favourite location ⭐️
-- Location autocomplete ⌨️
+- Location autocomplete (experimental feature) ⌨️
 
 ### Live Link:
 
