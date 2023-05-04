@@ -2,7 +2,7 @@
   padding-top: 20px;
   background-color: #fff;
   height: 450px;
-  width: 370px;
+  width: 400px;
   border-radius: 15px;
   position: relative;
   transition: height .1s;
@@ -195,7 +195,7 @@
   position: absolute;
   font-size: 28px;
   top: 85px;
-  left: 390px;
+  left: 420px;
   color: whitesmoke;
   user-select: none;
 }
@@ -239,8 +239,8 @@
 .three-day-forecast-container {
   margin-top: 60px;
   height: 150px;
-  width: 370px;
-  padding: 0 10px 0 10px;
+  width: 400px;
+  padding: 0 15px 0 15px;
   background-color: #ffffff0f;
   border-radius: 15px;
   box-shadow: #1b1b1b05 1px 1px 1px 1px;
@@ -252,7 +252,7 @@
 .three-day-forecast {
   padding-top: 2px;
   user-select: none;
-  flex: 0 0 32%;
+  flex: 0 0 31%;
   height: 80%;
   background-color: #fcfcfc;
   border-radius: 7px;
@@ -279,17 +279,18 @@
   .maindiv {
     transform: scale(0.9);
     height: 450px;
-    width: 360px;
+    width: 390px;
     border-radius: 15px;
   }
 
   .three-day-forecast-container {
+    width: 390px;
     margin-top: 40px;
     transform: scale(0.9);
   }
 
   .three-day-forecast {
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
 
   .closed {
@@ -321,7 +322,7 @@
   .maindiv {
     transform: scale(0.8);
     height: 450px;
-    width: 370px;
+    width: 390px;
     border-radius: 15px;
   }
 
@@ -332,13 +333,13 @@
   }
 
   .three-day-forecast-container {
-    width: 370px;
+    width: 390px;
     margin-top: 40px;
     transform: scale(0.8);
   }
 
   .three-day-forecast {
-    transform: scale(0.8);
+    transform: scale(0.95);
   }
 
   .closed {
