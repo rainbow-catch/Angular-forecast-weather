@@ -28,6 +28,7 @@ export class ForecastComponent implements OnInit {
   selectedDay = 0;
   selectedDayForecastData: futureDayForecastType | undefined;
   autocompleteArray = [];
+  currentHour = -1;
 
   constructor(
     private forecastSerice: ForecastService,
@@ -95,6 +96,12 @@ export class ForecastComponent implements OnInit {
   }
 
   openDay(day: 0 | 1 | 2) {
+    if (this.currentWeatherData) {
+      this.currentHour = new Date(
+        this.currentWeatherData.location.localtime
+      ).getHours();
+    }
+
     if (!this.displayForecast) {
       this.displayForecast = !this.displayForecast;
     }
