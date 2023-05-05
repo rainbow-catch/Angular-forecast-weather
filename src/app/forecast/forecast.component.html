@@ -35,9 +35,18 @@
         <button (click)="closeThreeDayForecast()" id="close-hour-forecast-button">X</button>
         <div *ngFor="let hour of hourForecast ; index as i;">
           <div *ngIf="hourForecast" class="weather-hour-element">
-            <span>{{hourForecast[i].temp_c}}°C</span>
-            <img class="hour-weather-icon" [src]="hourForecast[i].condition.icon">
-            <span>{{i}}:00</span>
+            <div *ngIf="i!==currentHour; else currentHourElement">
+              <span>{{hourForecast[i].temp_c}}°C</span>
+              <img class="hour-weather-icon" [src]="hourForecast[i].condition.icon">
+              <span>{{i}}:00</span>
+            </div>
+            <ng-template #currentHourElement>
+              <div class="weather-hour-element-interior-active">
+                <span>{{hourForecast[i].temp_c}}°C</span>
+                <img class="hour-weather-icon" [src]="hourForecast[i].condition.icon">
+                <span>{{i}}:00</span>
+              </div>
+            </ng-template>
           </div>
         </div>
       </div>

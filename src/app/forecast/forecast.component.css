@@ -79,6 +79,11 @@
   width: auto;
 }
 
+.weather-hour-element-interior-active{
+  background-color: #b2b2b243;
+  border-radius: 5px;
+}
+
 #close-hour-forecast-button {
   background-color: #b2b2b2;
   height: 25px;
