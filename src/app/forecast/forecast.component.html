@@ -35,7 +35,7 @@
         <button (click)="closeThreeDayForecast()" id="close-hour-forecast-button">X</button>
         <div *ngFor="let hour of hourForecast ; index as i;">
           <div *ngIf="hourForecast" class="weather-hour-element">
-            <div *ngIf="i!==currentHour; else currentHourElement">
+            <div *ngIf="i!==currentHour || this.selectedDay!==0; else currentHourElement">
               <span>{{hourForecast[i].temp_c}}°C</span>
               <img class="hour-weather-icon" [src]="hourForecast[i].condition.icon">
               <span>{{i}}:00</span>
