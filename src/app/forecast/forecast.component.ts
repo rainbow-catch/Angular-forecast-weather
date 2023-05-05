@@ -188,6 +188,7 @@ export class ForecastComponent implements OnInit {
 
       this.openMainDiv();
       this.searchValue = '';
+      this.closeThreeDayForecast();
       const input: any = document.querySelector(
         '.ng-autocomplete .autocomplete-container input'
       );
