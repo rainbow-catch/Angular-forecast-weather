@@ -100,7 +100,7 @@ export class ForecastComponent implements OnInit {
 
   hideKeyboardMobile(e: KeyboardEvent) {
     if (e.key == 'Enter' || e.key == 'Return') {
-      const element: any = document.querySelector('.ng-autocomplete ::ng-deep .autocomplete-container input');
+      const element: any = document.querySelector('.ng-autocomplete .autocomplete-container input');
       element?.blur();
     }
   }
