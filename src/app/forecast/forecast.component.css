@@ -72,11 +72,14 @@
   align-items: center;
   flex-direction: column;
   margin: 0 10px 0 10px;
+  user-select: none;
 }
 
 .weather-hour-element img {
   height: 50px;
   width: auto;
+  user-select: none;
+  pointer-events: none;
 }
 
 .weather-hour-element-interior-active{
