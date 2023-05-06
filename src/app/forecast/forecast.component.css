@@ -54,6 +54,23 @@
   width: auto;
   position: absolute;
   transform: translate(-33px, 4px);
+  transition: transform .4s ease-in-out;
+}
+.location-icon-focus{
+  pointer-events: none;
+  height: 30px;
+  width: auto;
+  position: absolute;
+  transform: translate(-33px, 4px) rotate(43deg);
+  transition: transform .4s ease-in-out;
+}
+.location-icon-active{
+  pointer-events: none;
+  height: 30px;
+  width: auto;
+  position: absolute;
+  transform: translate(-33px, 4px) rotate(90deg);
+  transition: transform .4s ease-in-out;
 }
 
 .weather-hour-forecast {

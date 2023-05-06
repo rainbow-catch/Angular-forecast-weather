@@ -7,10 +7,10 @@
     <button (click)="removeFavouriteLocation()">X</button>
   </div>
   <div class="search-container">
-    <img class="location-icon" src="assets/icons/navigation.png">
+    <img [ngClass]="locationIconClassList" src="assets/icons/navigation.png">
     <form id="search-form" (submit)="handleSearch($event)">
       <div class="ng-autocomplete">
-        <ng-autocomplete id="searchInput" (input)="handleChange($event)" (keydown)="closeMainDivEvent($event)"
+        <ng-autocomplete id="searchInput" (inputFocused)="searchInputFocused()" (input)="handleChange($event)" (keydown)="closeMainDivEvent($event)"
           (keyup)="hideKeyboardMobile($event)" [data]="autocompleteArray" searchKeyword='name'
           placeholder="Enter location" [itemTemplate]="itemTemplate" (selected)="handleSearch()">
         </ng-autocomplete>

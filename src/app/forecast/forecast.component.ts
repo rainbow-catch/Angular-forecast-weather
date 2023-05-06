@@ -21,6 +21,7 @@ export class ForecastComponent implements OnInit {
   forecastIcons: string[] = ['', '', ''];
   starIconText = '☆';
   starIconClassList = 'star-icon';
+  locationIconClassList = 'location-icon';
   favouriteLocation = '';
   favouriteLocationContainerClassList = 'favourite-location-container';
   displayForecast: boolean = false;
@@ -58,13 +59,21 @@ export class ForecastComponent implements OnInit {
     getAutocomplete();
   }
 
+  searchInputFocused() {
+    this.locationIconClassList = 'location-icon-focus'
+  }
+
   openMainDiv() {
     this.mainDivClassList = '';
     this.favouriteLocationContainerClassList =
       'favourite-location-container invisible';
+    this.locationIconClassList = 'location-icon-active'
   }
   closeMainDiv() {
     this.mainDivClassList = 'closed';
+    this.favouriteLocationContainerClassList =
+      'favourite-location-container';
+    this.locationIconClassList = 'location-icon';
   }
 
   formatDate() {
