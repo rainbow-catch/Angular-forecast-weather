@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ForecastComponent } from './forecast/forecast.component';
 import {AutocompleteLibModule} from 'angular-ng-autocomplete';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -16,8 +15,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AutocompleteLibModule,
-    NoopAnimationsModule
+    AutocompleteLibModule
   ],
   providers: [],
   bootstrap: [AppComponent]
